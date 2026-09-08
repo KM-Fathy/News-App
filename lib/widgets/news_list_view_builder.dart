@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:news_app/models/article_model.dart';
 import 'package:news_app/services/news_service.dart';
 
+import 'error_message.dart';
+import 'loading_indicator.dart';
 import 'news_list_view.dart';
 
 class NewsListViewBuilder extends StatefulWidget {
@@ -15,34 +17,37 @@ class NewsListViewBuilder extends StatefulWidget {
 }
 
 class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
-  List<ArticleModel> articles = [];
-
-  bool isLoading = true;
+  var future;
 
   @override
   void initState() {
     super.initState();
-    getGeneralNews();
-  }
-
-  Future<void> getGeneralNews() async {
-    articles = await NewsService(Dio()).getNews();
-    isLoading = false;
-    setState(() {});
+    future = NewsService(Dio()).getNews();
   }
 
   @override
   Widget build(BuildContext context) {
-    return isLoading
-        ? const SliverToBoxAdapter(
-            child: Center(
-              child: CircularProgressIndicator(
-                color: Colors.blue,
-              ),
-            ),
-          )
-        : NewsListView(
-            articles: articles,
+    return FutureBuilder<List<ArticleModel>>(
+      future: future,
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          return NewsListView(
+            articles: snapshot.data!,
           );
+        } else if (snapshot.hasError) {
+          return const SliverToBoxAdapter(
+            child: ErrorMessage(
+              message: "Something went wrong",
+            ),
+          );
+        } else {
+          return const SliverToBoxAdapter(
+            child: Center(
+              child: LoadingIndicator(),
+            ),
+          );
+        }
+      },
+    );
   }
 }
