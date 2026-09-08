@@ -8,4 +8,12 @@ class ArticleModel {
     required this.title,
     required this.description,
   });
+
+  factory ArticleModel.fromJson(Map<String, dynamic> json) {
+    return ArticleModel(
+      image: json["urlToImage"],
+      title: json["title"],
+      description: json["description"],
+    );
+  }
 }
