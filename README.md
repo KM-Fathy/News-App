@@ -96,7 +96,7 @@ flutter pub get
 
 ### 4. Configure API Key
 
-If your `news_service.dart` requires an API key (e.g., from [NewsAPI](https://newsapi.org/)):
+If your `news_service.dart` requires an API key (from [NewsAPI](https://newsapi.org/)):
 
 1. Open `lib/services/news_service.dart`.
 2. Locate the base URL or API key field and replace it with your credentials:
