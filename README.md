@@ -101,7 +101,7 @@ If your `news_service.dart` requires an API key (e.g., from [NewsAPI](https://ne
 1. Open `lib/services/news_service.dart`.
 2. Locate the base URL or API key field and replace it with your credentials:
    ```dart
-   final String apiKey = 'YOUR_API_KEY_HERE';
+   final String apiKey = 'Put Your ApiKey Here To Get News';
    ```
 
 ### 5. Run the Application
