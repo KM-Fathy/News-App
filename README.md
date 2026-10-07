@@ -6,9 +6,15 @@
 
 ## 📱 App Previews
 
-| Home Feed | Category Screen |
-| :---: | :---: |
-| <img width="1263" height="2645" alt="Home_Page" src="https://github.com/user-attachments/assets/79de506c-65de-480f-aa79-854fca645046" width="320"/> | <img width="1263" height="2655" alt="Category_Page" src="https://github.com/user-attachments/assets/6ba9d814-645d-46cf-ab5a-87557ff6bc37" /> |
+<h3 align="center">Home Feed</h3>
+<p align="center">
+  <img width="30%" height="2633" alt="Home_Page" src="https://github.com/user-attachments/assets/79de506c-65de-480f-aa79-854fca645046" />
+</p>
+
+<h3 align="center">Category Page</h3>
+<p align="center">
+  <img width="30%" height="2647" alt="Category_Page" src="https://github.com/user-attachments/assets/6ba9d814-645d-46cf-ab5a-87557ff6bc37" />
+</p>
 
 ---
 
